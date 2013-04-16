@@ -1,0 +1,16 @@
+from bs4 import BeautifulSoup
+
+class Cluster(object):
+    def __init__(self, xml):
+        self.name = xml['NAME']
+        self.localtime = xml['LOCALTIME']
+        self.owner = xml['OWNER']
+        self.latlog = xml['LATLONG']
+        self.url = xml['URL']
+
+if __name__ == '__main__':
+    xml = open('output.xml', 'r')
+    text = xml.read()
+    p = BeautifulSoup(text)
+    print p.findAll('cluster')
+
