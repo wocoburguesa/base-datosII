@@ -28,7 +28,7 @@ class HostModel(models.Model):
     tags = models.CharField(max_length=1024)
     reported = models.CharField(max_length=1024)
     tn = models.CharField(max_length=1024)
-    tmax = models.CharField(max_length=1024)b
+    tmax = models.CharField(max_length=1024)
     dmax = models.CharField(max_length=1024)
     location = models.CharField(max_length=1024)
     gmond_started = models.CharField(max_length=1024)

@@ -53,9 +53,11 @@ CREATE TABLE `ganglia_data_hostmodel` (
     `tmax` varchar(1024) NOT NULL,
     `dmax` varchar(1024) NOT NULL,
     `location` varchar(1024) NOT NULL,
-    `gmond_started` varchar(1024) NOT NULL
+    `gmond_started` varchar(1024) NOT NULL,
+    `cluster_id` integer NOT NULL
 )
 ;
+ALTER TABLE `ganglia_data_hostmodel` ADD CONSTRAINT `cluster_id_refs_id_66054795` FOREIGN KEY (`cluster_id`) REFERENCES `ganglia_data_clustermodel` (`id`);
 ALTER TABLE `ganglia_data_hostmodel_metrics` ADD CONSTRAINT `hostmodel_id_refs_id_ebb70309` FOREIGN KEY (`hostmodel_id`) REFERENCES `ganglia_data_hostmodel` (`id`);
 
 COMMIT;
